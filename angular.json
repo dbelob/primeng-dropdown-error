@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "primeng-dropdown-error:build:production"
+              "buildTarget": "primeng-dropdown-error:build:production"
             },
             "development": {
-              "browserTarget": "primeng-dropdown-error:build:development"
+              "buildTarget": "primeng-dropdown-error:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "primeng-dropdown-error:build"
+            "buildTarget": "primeng-dropdown-error:build"
           }
         },
         "test": {
