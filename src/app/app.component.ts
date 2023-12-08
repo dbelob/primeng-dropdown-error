@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 interface City {
   name: string;
@@ -21,7 +22,11 @@ export class AppComponent {
   countries: Country[] | undefined;
   selectedCountry: Country | undefined;
 
+  constructor(private translateService: TranslateService) {}
+
   ngOnInit() {
+    this.translateService.use('en');
+
     this.cities = [
       {name: 'New York', code: 'NY'},
       {name: 'Rome', code: 'RM'},
