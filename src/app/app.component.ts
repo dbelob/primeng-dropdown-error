@@ -23,10 +23,12 @@ interface Language {
 })
 export class AppComponent {
   cities: City[] | undefined;
-  selectedCity: City | undefined;
+  staticSelectedCity: City | undefined;
+  dynamicSelectedCity: City | undefined;
 
   countries: Country[] | undefined;
-  selectedCountry: Country | undefined;
+  staticSelectedCountry: Country | undefined;
+  dynamicSelectedCountry: Country | undefined;
 
   languages: Language[] = [{name: 'English', code: 'en'}, {name: 'German', code: 'de'}];
   selectedLanguage = 'en';

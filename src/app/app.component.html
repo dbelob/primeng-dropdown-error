@@ -5,16 +5,18 @@
 
   <div class="field col-12 md:col-6">
     <h2>Basic</h2>
-    <p-dropdown [options]="cities" [(ngModel)]="selectedCity" optionLabel="name" [showClear]="true" placeholder="Select a City"></p-dropdown>
+    <p-dropdown [options]="cities" [(ngModel)]="staticSelectedCity" optionLabel="name" [showClear]="true" placeholder="Select a City"
+                [autoDisplayFirst]="false"></p-dropdown>
   </div>
 
   <div class="field col-12 md:col-6">
     <h2>Template</h2>
-    <p-dropdown [options]="countries" [(ngModel)]="selectedCountry" optionLabel="name" [showClear]="true" placeholder="Select a Country">
+    <p-dropdown [options]="countries" [(ngModel)]="staticSelectedCountry" optionLabel="name" [showClear]="true" placeholder="Select a Country"
+                [autoDisplayFirst]="false">
       <ng-template pTemplate="selectedItem">
-        <div class="flex align-items-center gap-2" *ngIf="selectedCountry">
-          <img src="assets/images/flag_placeholder.png" [class]="'flag flag-' + selectedCountry.code.toLowerCase()" style="width: 18px"/>
-          <div>{{ selectedCountry.name }}</div>
+        <div class="flex align-items-center gap-2" *ngIf="staticSelectedCountry">
+          <img src="assets/images/flag_placeholder.png" [class]="'flag flag-' + staticSelectedCountry.code.toLowerCase()" style="width: 18px"/>
+          <div>{{ staticSelectedCountry.name }}</div>
         </div>
       </ng-template>
       <ng-template let-country pTemplate="item">
@@ -43,16 +45,18 @@
 
   <div class="field col-12 md:col-6">
     <h2>Basic</h2>
-    <p-dropdown [options]="cities" [(ngModel)]="selectedCity" optionLabel="name" [showClear]="true" placeholder="{{'selectCity' | translate}}"></p-dropdown>
+    <p-dropdown [options]="cities" [(ngModel)]="dynamicSelectedCity" optionLabel="name" [showClear]="true" placeholder="{{'selectCity' | translate}}"
+                [autoDisplayFirst]="false"></p-dropdown>
   </div>
 
   <div class="field col-12 md:col-6">
     <h2>Template</h2>
-    <p-dropdown [options]="countries" [(ngModel)]="selectedCountry" optionLabel="name" [showClear]="true" placeholder="{{'selectCountry' | translate}}">
+    <p-dropdown [options]="countries" [(ngModel)]="dynamicSelectedCountry" optionLabel="name" [showClear]="true" placeholder="{{'selectCountry' | translate}}"
+                [autoDisplayFirst]="false">
       <ng-template pTemplate="selectedItem">
-        <div class="flex align-items-center gap-2" *ngIf="selectedCountry">
-          <img src="assets/images/flag_placeholder.png" [class]="'flag flag-' + selectedCountry.code.toLowerCase()" style="width: 18px"/>
-          <div>{{ selectedCountry.name }}</div>
+        <div class="flex align-items-center gap-2" *ngIf="dynamicSelectedCountry">
+          <img src="assets/images/flag_placeholder.png" [class]="'flag flag-' + dynamicSelectedCountry.code.toLowerCase()" style="width: 18px"/>
+          <div>{{ dynamicSelectedCountry.name }}</div>
         </div>
       </ng-template>
       <ng-template let-country pTemplate="item">
