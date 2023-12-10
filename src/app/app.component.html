@@ -2,10 +2,12 @@
   <div class="field col-12">
     <h1>Static text in placeholder</h1>
   </div>
+
   <div class="field col-12 md:col-6">
     <h2>Basic</h2>
     <p-dropdown [options]="cities" [(ngModel)]="selectedCity" optionLabel="name" [showClear]="true" placeholder="Select a City"></p-dropdown>
   </div>
+
   <div class="field col-12 md:col-6">
     <h2>Template</h2>
     <p-dropdown [options]="countries" [(ngModel)]="selectedCountry" optionLabel="name" [showClear]="true" placeholder="Select a Country">
@@ -23,13 +25,27 @@
       </ng-template>
     </p-dropdown>
   </div>
+
   <div class="field col-12">
     <h1>Dynamic text in placeholder (with pipe)</h1>
+    <label for="language">Language:</label>
+    <p-selectButton id="language" [options]="languages" [(ngModel)]="selectedLanguage" optionLabel="name" optionValue="code"
+                    (onOptionClick)="changeLanguage($event)"></p-selectButton>
   </div>
+
+  <div class="field col-12 md:col-6">
+    Value of 'selectCity' string resource: {{'selectCity' | translate}}
+  </div>
+
+  <div class="field col-12 md:col-6">
+    Value of 'selectCountry' string resource: {{'selectCountry' | translate}}
+  </div>
+
   <div class="field col-12 md:col-6">
     <h2>Basic</h2>
     <p-dropdown [options]="cities" [(ngModel)]="selectedCity" optionLabel="name" [showClear]="true" placeholder="{{'selectCity' | translate}}"></p-dropdown>
   </div>
+
   <div class="field col-12 md:col-6">
     <h2>Template</h2>
     <p-dropdown [options]="countries" [(ngModel)]="selectedCountry" optionLabel="name" [showClear]="true" placeholder="{{'selectCountry' | translate}}">

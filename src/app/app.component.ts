@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { SelectButtonOptionClickEvent } from "primeng/selectbutton";
 
 interface City {
   name: string;
@@ -7,6 +8,11 @@ interface City {
 }
 
 interface Country {
+  name: string;
+  code: string;
+}
+
+interface Language {
   name: string;
   code: string;
 }
@@ -21,6 +27,9 @@ export class AppComponent {
 
   countries: Country[] | undefined;
   selectedCountry: Country | undefined;
+
+  languages: Language[] = [{name: 'English', code: 'en'}, {name: 'German', code: 'de'}];
+  selectedLanguage = 'en';
 
   constructor(private translateService: TranslateService) {}
 
@@ -47,5 +56,9 @@ export class AppComponent {
       {name: 'Spain', code: 'ES'},
       {name: 'United States', code: 'US'}
     ];
+  }
+
+  changeLanguage(event: SelectButtonOptionClickEvent) {
+    this.translateService.use(event.option.code);
   }
 }
