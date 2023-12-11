@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { SelectButtonOptionClickEvent } from "primeng/selectbutton";
 
@@ -21,7 +21,7 @@ interface Language {
   selector: 'app-root',
   templateUrl: './app.component.html'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   cities: City[] | undefined;
   staticSelectedCity: City | undefined;
   dynamicSelectedCity: City | undefined;
